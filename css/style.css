@@ -38,10 +38,10 @@ html, body, .page {
 }
 
 #p1 { background: #000000; }
-#p2 { background: #a40000; }
-#p3 { background: #ff0000; }
-#p4 { background: #e80000; }
-#p5 { background: #ffffff; }
+#p2 { background-image: url('../img/bg1.png');}
+#p3 { background: #9b151c; }
+#p4 { background: #9b151c; }
+
 
 #t2:target #p2,
 #t3:target #p3,
@@ -83,21 +83,60 @@ ul .icon:hover {
 }
 h1{
   font-size:150px;
+  color:#250000;
+  font-weight:800;
+  font-family: 'Nanum Square';
+  text-shadow: 80px 0px 18px #b94946;
 }
 h2{
   font-size:18px;
-  font-weight: 300;
-  opacity:0.8;
+  font-weight: 800;
+  word-spacing:-3px;
+
+  color:#250000;
+  font-family: 'Nanum Square';
+}
+
+h3{
+  font-size:13px;
+  font-weight:900;
+  line-height:19px;
+  word-spacing:-2px;
+  font-family: 'Nanum Square';
+  color:#000000;
  
 }
-h3{
-  font-size:15px;
+h4{
+  font-size:150px;
+  font-weight:900;
+  font-family: 'Nanum Square';
+  color:white;
+  opacity:0.7;
+}
+.borboletas{
+  
+  width:800px;
+  height:500px;
+  opacity:0.7;
+  
+}
+h4{
+  font-size:18px;
+  text-align:left;
   font-weight:100;
-  line-height:19px;
+  font-family: 'Nanum Square';
+}
+#subtitle{
+  position:fixed;
+  margin: 370px 0 0px 150px;
+  border:2px solid white ;
+  padding:0 40px;
+  opacity: 0.6;
+  font-family: 'Nanum Square';
 }
 #information{
   float:right;
-  margin: 0 0px;
+  margin: 50px 0px;
   line-height: 24px;
   text-align:center;
   width:900px;
@@ -144,6 +183,10 @@ ul {
   -o-transition: all .5s ease-out;
   
 }
+#infimg{
+  float:left;
+  margin: 150px 0px 0 250px ;
+}
 
 a {
   text-decoration: none;
@@ -160,7 +203,9 @@ a {
 .hint {
   font-size: 13px;
 }
-
+#p4{
+  background-image: url('../img/bg.png');
+}
 #p4 .hint {
   display: inherit !important;
 }
@@ -400,4 +445,510 @@ a {
     -webkit-filter: blur(0);
             filter: blur(0);
   }
+}
+.wrap {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #120103;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  background: #9b151c;
+  box-shadow: 0 .5em 1em #111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+}
+header label {
+  color: #971616;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 4.25em;
+  font-size: .75em;
+  font-weight: bold;
+  padding: 0 1em;
+}
+
+header label:hover {
+  background: black;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  padding: 8em 1em 0;
+  background-color: #120103;
+  background-position: 100% 50%;
+  background-size: cover;
+  transition: left 0s .75s;
+}
+.slide-one {
+  background-image: url("../img/gallery1.jpg");
+}
+.slide-two {
+  background-image: url("../img/gallery2.jpg");
+}
+.slide-three {
+  background-image: url("../img/gallery3.jpg");
+}
+.slide-four {
+  background-image: url("../img/gallery4.jpg");
+}
+.slide h1 {
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: opacity .5s, -webkit-transform .5s .5s;
+  transition: transform .5s .5s, opacity .5s;
+  transition: transform .5s .5s, opacity .5s, -webkit-transform .5s .5s;
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+[id^="slide"]:checked + .slide h1 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  transition: all .5s .5s;
+}
+
+@-moz-keyframes borboletas-pos-loop {
+  0% {
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -moz-transform: translate(100px, 0);
+    transform: translate(100px, 0);
+  }
+  50% {
+    -moz-transform: translate(30px, -70px);
+    transform: translate(30px, -70px);
+  }
+  75% {
+    -moz-transform: translate(0px, 20px);
+    transform: translate(0px, 20px);
+  }
+  100% {
+    -moz-transform: translate(-100px, -50px);
+    transform: translate(-100px, -50px);
+  }
+}
+@-webkit-keyframes borboletas-pos-loop {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(100px, 0);
+    transform: translate(100px, 0);
+  }
+  50% {
+    -webkit-transform: translate(30px, -70px);
+    transform: translate(30px, -70px);
+  }
+  75% {
+    -webkit-transform: translate(0px, 20px);
+    transform: translate(0px, 20px);
+  }
+  100% {
+    -webkit-transform: translate(-100px, -50px);
+    transform: translate(-100px, -50px);
+  }
+}
+@keyframes borboletas-pos-loop {
+  0% {
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    -moz-transform: translate(100px, 0);
+    -ms-transform: translate(100px, 0);
+    -webkit-transform: translate(100px, 0);
+    transform: translate(100px, 0);
+  }
+  50% {
+    -moz-transform: translate(30px, -70px);
+    -ms-transform: translate(30px, -70px);
+    -webkit-transform: translate(30px, -70px);
+    transform: translate(30px, -70px);
+  }
+  75% {
+    -moz-transform: translate(0px, 20px);
+    -ms-transform: translate(0px, 20px);
+    -webkit-transform: translate(0px, 20px);
+    transform: translate(0px, 20px);
+  }
+  100% {
+    -moz-transform: translate(-100px, -50px);
+    -ms-transform: translate(-100px, -50px);
+    -webkit-transform: translate(-100px, -50px);
+    transform: translate(-100px, -50px);
+  }
+}
+.borboletas {
+  position: absolute;
+  left: 20%;
+  bottom: 100px;
+  -moz-animation: borboletas-pos-loop 7s ease-in-out infinite alternate-reverse;
+  -webkit-animation: borboletas-pos-loop 7s ease-in-out infinite alternate-reverse;
+  animation: borboletas-pos-loop 7s ease-in-out infinite alternate-reverse;
+}
+
+.borboleta-oval-squish {
+  -moz-transform: scale(0.3, 1);
+  -ms-transform: scale(0.3, 1);
+  -webkit-transform: scale(0.3, 1);
+  transform: scale(0.3, 1);
+}
+
+@-moz-keyframes borboleta-radial-loop {
+  0% {
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes borboleta-radial-loop {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes borboleta-radial-loop {
+  0% {
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.borboleta-1 {
+  -moz-animation: borboleta-radial-loop 10s linear infinite;
+  -webkit-animation: borboleta-radial-loop 10s linear infinite;
+  animation: borboleta-radial-loop 10s linear infinite;
+}
+
+.borboleta-2 {
+  -moz-animation: borboleta-radial-loop 15s linear infinite;
+  -webkit-animation: borboleta-radial-loop 15s linear infinite;
+  animation: borboleta-radial-loop 15s linear infinite;
+}
+
+@-moz-keyframes borboleta-oval-loop {
+  0% {
+    -moz-transform: rotate(0) scale(3.3, 1);
+    transform: rotate(0) scale(3.3, 1);
+  }
+  100% {
+    -moz-transform: rotate(-360deg) scale(3.3, 1);
+    transform: rotate(-360deg) scale(3.3, 1);
+  }
+}
+@-webkit-keyframes borboleta-oval-loop {
+  0% {
+    -webkit-transform: rotate(0) scale(3.3, 1);
+    transform: rotate(0) scale(3.3, 1);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg) scale(3.3, 1);
+    transform: rotate(-360deg) scale(3.3, 1);
+  }
+}
+@keyframes borboleta-oval-loop {
+  0% {
+    -moz-transform: rotate(0) scale(3.3, 1);
+    -ms-transform: rotate(0) scale(3.3, 1);
+    -webkit-transform: rotate(0) scale(3.3, 1);
+    transform: rotate(0) scale(3.3, 1);
+  }
+  100% {
+    -moz-transform: rotate(-360deg) scale(3.3, 1);
+    -ms-transform: rotate(-360deg) scale(3.3, 1);
+    -webkit-transform: rotate(-360deg) scale(3.3, 1);
+    transform: rotate(-360deg) scale(3.3, 1);
+  }
+}
+.borboleta-oval {
+  position: absolute;
+  -moz-animation: borboleta-radial-loop 1.2s linear infinite;
+  -webkit-animation: borboleta-radial-loop 1.2s linear infinite;
+  animation: borboleta-radial-loop 1.2s linear infinite;
+}
+
+.borboleta-radial {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  -moz-animation: borboleta-oval-loop 1.2s linear infinite;
+  -webkit-animation: borboleta-oval-loop 1.2s linear infinite;
+  animation: borboleta-oval-loop 1.2s linear infinite;
+}
+
+.borboleta-2 .borboleta-oval {
+  -moz-animation: borboleta-radial-loop 1.5s linear infinite;
+  -webkit-animation: borboleta-radial-loop 1.5s linear infinite;
+  animation: borboleta-radial-loop 1.5s linear infinite;
+}
+
+.borboleta-2 .borboleta-radial {
+  -moz-animation: borboleta-oval-loop 1.5s linear infinite;
+  -webkit-animation: borboleta-oval-loop 1.5s linear infinite;
+  animation: borboleta-oval-loop 1.5s linear infinite;
+}
+
+.borboleta-gfx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 250px;
+}
+
+@-moz-keyframes borboleta-gfx-upright-loop {
+  0% {
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes borboleta-gfx-upright-loop {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes borboleta-gfx-upright-loop {
+  0% {
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+.borboleta-1 .borboleta-gfx {
+  -moz-animation: borboleta-gfx-upright-loop 10s linear infinite;
+  -webkit-animation: borboleta-gfx-upright-loop 10s linear infinite;
+  animation: borboleta-gfx-upright-loop 10s linear infinite;
+}
+
+.borboleta-2 .borboleta-gfx {
+  -moz-animation: borboleta-gfx-upright-loop 15s linear infinite;
+  -webkit-animation: borboleta-gfx-upright-loop 15s linear infinite;
+  animation: borboleta-gfx-upright-loop 15s linear infinite;
+}
+
+@-moz-keyframes borboleta-anim-loop {
+  0% {
+    -moz-transform: scale(1, 1.2) rotate(40deg);
+    transform: scale(1, 1.2) rotate(40deg);
+  }
+  100% {
+    -moz-transform: scale(0.7, -1) rotate(-40deg);
+    transform: scale(0.7, -1) rotate(-40deg);
+  }
+}
+@-webkit-keyframes borboleta-anim-loop {
+  0% {
+    -webkit-transform: scale(1, 1.2) rotate(40deg);
+    transform: scale(1, 1.2) rotate(40deg);
+  }
+  100% {
+    -webkit-transform: scale(0.7, -1) rotate(-40deg);
+    transform: scale(0.7, -1) rotate(-40deg);
+  }
+}
+@keyframes borboleta-anim-loop {
+  0% {
+    -moz-transform: scale(1, 1.2) rotate(40deg);
+    -ms-transform: scale(1, 1.2) rotate(40deg);
+    -webkit-transform: scale(1, 1.2) rotate(40deg);
+    transform: scale(1, 1.2) rotate(40deg);
+  }
+  100% {
+    -moz-transform: scale(0.7, -1) rotate(-40deg);
+    -ms-transform: scale(0.7, -1) rotate(-40deg);
+    -webkit-transform: scale(0.7, -1) rotate(-40deg);
+    transform: scale(0.7, -1) rotate(-40deg);
+  }
+}
+.borboleta-anim {
+  background: radial-gradient(closest-side at 50% 50%, #ffffff 50%, rgba(255, 255, 255, 0) 50%), radial-gradient(closest-side at 50% 50%, #ffffff 50%, rgba(255, 255, 255, 0) 50%);
+  background-repeat: no-repeat;
+  background-size: 90% 70%,100% 70%;
+  background-position: 20% -40%,0 40%;
+  width: 25px;
+  height: 20px;
+  -moz-animation: borboleta-anim-loop 150ms ease-in-out infinite alternate-reverse;
+  -webkit-animation: borboleta-anim-loop 150ms ease-in-out infinite alternate-reverse;
+  animation: borboleta-anim-loop 150ms ease-in-out infinite alternate-reverse;
+}
+
+.cast{
+  margin:5px 10px 0 400px; ;
+}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+.snip1273 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  margin: 50px  1%;
+  min-width: 310px -60px;
+  max-width: 500px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  background-color: #000000;
+  font-size: 16px;
+}
+.snip1273 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+.snip1273 img {
+  position: relative;
+  max-width: 100%;
+  vertical-align: top;
+}
+.snip1273 figcaption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  padding: 20px 30px;
+}
+.snip1273 figcaption:before,
+.snip1273 figcaption:after {
+  width: 1px;
+  height: 0;
+}
+.snip1273 figcaption:before {
+  right: 0;
+  top: 0;
+}
+.snip1273 figcaption:after {
+  left: 0;
+  bottom: 0;
+}
+.snip1273 h3,
+.snip1273 p {
+  line-height: 1.5em;
+}
+.snip1273 h3 {
+  margin: 0 0 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.snip1273 p {
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 0 0 15px;
+}
+.snip1273 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+.snip1273:before,
+.snip1273:after,
+.snip1273 figcaption:before,
+.snip1273 figcaption:after {
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+  z-index: 1;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  opacity: 0.8;
+}
+.snip1273:before,
+.snip1273:after {
+  height: 1px;
+  width: 0%;
+}
+.snip1273:before {
+  top: 0;
+  left: 0;
+}
+.snip1273:after {
+  bottom: 0;
+  right: 0;
+}
+.snip1273:hover img,
+.snip1273.hover img {
+  opacity: 0.4;
+}
+.snip1273:hover figcaption,
+.snip1273.hover figcaption {
+  opacity: 1;
+}
+.snip1273:hover figcaption:before,
+.snip1273.hover figcaption:before,
+.snip1273:hover figcaption:after,
+.snip1273.hover figcaption:after {
+  height: 100%;
+}
+.snip1273:hover:before,
+.snip1273.hover:before,
+.snip1273:hover:after,
+.snip1273.hover:after {
+  width: 100%;
+}
+.snip1273:hover:before,
+.snip1273.hover:before,
+.snip1273:hover:after,
+.snip1273.hover:after,
+.snip1273:hover figcaption:before,
+.snip1273.hover figcaption:before,
+.snip1273:hover figcaption:after,
+.snip1273.hover figcaption:after {
+  opacity: 0.1;
 }
